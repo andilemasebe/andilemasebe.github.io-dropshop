@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home & Living - DropShop</title>
+    <link rel="stylesheet" href="assets/styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">DropShop</div>
+            <div class="top-nav">
+                <div class="search-bar">
+                    <input type="search" placeholder="Search products...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="user-account">
+                    <a href="#login"><i class="fas fa-user"></i> Login</a>
+                    <a href="#register">Register</a>
+                </div>
+                <div class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li class="dropdown">
+                    <a href="#products">Products <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-content">
+                        <li><a href="#new">New Arrivals</a></li>
+                        <li><a href="#bestsellers">Best Sellers</a></li>
+                        <li><a href="#trending">Trending</a></li>
+                        <li><a href="#deals">Special Deals</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#categories">Categories <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-content">
+                        <li><a href="#electronics">Electronics</a></li>
+                        <li><a href="#fashion">Fashion</a></li>
+                        <li><a href="#home-living">Home & Living</a></li>
+                        <li><a href="#accessories">Accessories</a></li>
+                    </ul>
+                </li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <!-- Add this after the nav section -->
+        <div id="shopping-cart" class="cart-sidebar">
+            <div class="cart-header">
+                <h3><i class="fas fa-shopping-cart"></i> Your Cart</h3>
+                <button class="close-cart"><i class="fas fa-times"></i></button>
+            </div>
+            
+            <div class="cart-items">
+                <!-- Cart items will be dynamically added here -->
+            </div>
+            
+            <div class="cart-summary">
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span class="subtotal">R0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Shipping</span>
+                    <span class="shipping">R0.00</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total</span>
+                    <span class="total-amount">R0.00</span>
+                </div>
+                <button class="checkout-btn">
+                    Proceed to Checkout <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="cart-overlay"></div>
+
+    </header>
+
+     <!-- Add this before closing body tag -->
+<div class="chatbot-container">
+    <div class="chat-header" id="chatHeader">
+        <h3><i class="fas fa-robot"></i> DropShop Assistant</h3>
+        <div class="chat-controls">
+            <button class="minimize-chat"><i class="fas fa-minus"></i></button>
+            <button class="close-chat"><i class="fas fa-times"></i></button>
+        </div>
+    </div>
+    
+    <div class="chat-messages">
+        <div class="message bot">
+            <i class="fas fa-robot"></i>
+            <div class="message-content">
+                Hello! How can I help you today?
+            </div>
+        </div>
+    </div>
+    
+    <div class="quick-responses">
+        <button>Track Order</button>
+        <button>Shipping Info</button>
+        <button>Returns</button>
+        <button>Product Help</button>
+    </div>
+
+    <div class="chat-input">
+        <input type="text" placeholder="Type your message...">
+        <button class="send-message">
+            <i class="fas fa-paper-plane"></i>
+        </button>
+    </div>
+</div>
+
+<button class="chat-toggle">
+    <i class="fas fa-comments"></i>
+</button>
+
+        <!-- Add to body -->
+        <div id="login-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <div class="modal-header">
+                    <h2>Welcome Back</h2>
+                    <p>Sign in to your account</p>
+                </div>
+                <form class="modal-form">
+                    <div class="form-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" required>
+                        <label>Email Address</label>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" required>
+                        <label>Password</label>
+                    </div>
+                    <div class="form-options">
+                        <label class="remember-me">
+                            <input type="checkbox">
+                            <span>Remember me</span>
+                        </label>
+                        <a href="#" class="forgot-password">Forgot Password?</a>
+                    </div>
+                    <button type="submit" class="submit-btn">Sign In</button>
+                    <div class="social-login">
+                        <p>Or continue with</p>
+                        <div class="social-buttons">
+                            <button type="button" class="google-btn"><i class="fab fa-google"></i></button>
+                            <button type="button" class="facebook-btn"><i class="fab fa-facebook-f"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="register-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <div class="modal-header">
+                    <h2>Create Account</h2>
+                    <p>Join our community today</p>
+                </div>
+                <form class="modal-form">
+                    <div class="form-group">
+                        <i class="fas fa-user"></i>
+                        <input type="text" required>
+                        <label>Full Name</label>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" required>
+                        <label>Email Address</label>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" required>
+                        <label>Password</label>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" required>
+                        <label>Confirm Password</label>
+                    </div>
+                    <div class="terms">
+                        <label>
+                            <input type="checkbox" required>
+                            <span>I agree to the Terms & Conditions</span>
+                        </label>
+                    </div>
+                    <button type="submit" class="submit-btn">Create Account</button>
+                </form>
+            </div>
+        </div>
+        <div id="forgot-password-modal" class="modal"></div>
+
+    <main class="home-living-page">
+        <div class="category-banner">
+            <h1>Home & Living</h1>
+            <p>Transform your space with our curated collection</p>
+        </div>
+
+        <div class="subcategories">
+            <a href="#furniture" class="subcategory-card">
+                <i class="fas fa-couch"></i>
+                <span>Furniture</span>
+            </a>
+            <a href="#decor" class="subcategory-card">
+                <i class="fas fa-paint-brush"></i>
+                <span>Decor</span>
+            </a>
+            <a href="#lighting" class="subcategory-card">
+                <i class="fas fa-lightbulb"></i>
+                <span>Lighting</span>
+            </a>
+            <a href="#kitchen" class="subcategory-card">
+                <i class="fas fa-utensils"></i>
+                <span>Kitchen</span>
+            </a>
+            <a href="#bedding" class="subcategory-card">
+                <i class="fas fa-bed"></i>
+                <span>Bedding</span>
+            </a>
+        </div>
+
+        <div class="filter-section">
+            <select name="room">
+                <option value="">Select Room</option>
+                <option value="living">Living Room</option>
+                <option value="bedroom">Bedroom</option>
+                <option value="kitchen">Kitchen</option>
+                <option value="bathroom">Bathroom</option>
+            </select>
+            <select name="style">
+                <option value="">Design Style</option>
+                <option value="modern">Modern</option>
+                <option value="traditional">Traditional</option>
+                <option value="scandinavian">Scandinavian</option>
+                <option value="industrial">Industrial</option>
+            </select>
+            <select name="price">
+                <option value="">Price Range</option>
+                <option value="0-1000">R0 - R1,000</option>
+                <option value="1001-5000">R1,001 - R5,000</option>
+                <option value="5001+">R5,001+</option>
+            </select>
+        </div>
+
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-badge">New Arrival</div>
+                <img src="images/modern-wall-art.jpg" alt="Modern Wall Art">
+                <div class="product-details">
+                    <h3>Modern Wall Art</h3>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <p class="price">R899</p>
+                    <p class="description">Contemporary abstract wall decoration</p>
+                    <div class="product-actions">
+                        <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                        <button class="quick-view"><i class="fas fa-eye"></i></button>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more product cards here -->
+        </div>
+
+        <div class="pagination">
+            <button class="prev-page"><i class="fas fa-chevron-left"></i></button>
+            <div class="page-numbers">
+                <button class="active">1</button>
+                <button>2</button>
+                <button>3</button>
+            </div>
+            <button class="next-page"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Your trusted dropshipping partner for quality products.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#shipping">Shipping Info</a></li>
+                    <li><a href="#returns">Returns</a></li>
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                    <li><a href="#terms">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: support@dropshop.com</p>
+                <p>Phone: (555) 123-4567</p>
+            </div>
+            <div class="footer-section newsletter-section">
+                <h3>Newsletter</h3>
+                <p>Subscribe to get special offers and latest updates</p>
+                <form class="newsletter-form">
+                    <div class="newsletter-input-group">
+                        <input type="email" placeholder="Enter your email address">
+                        <button type="submit">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+      <div class="footer-bottom">
+          <p>© 2024 DropShop. All rights reserved.</p>
+      </div>
+  </footer>
+
+    <script src="assets/scripts/script.js"></script>
+    <script src="assets/scripts/app.js"></script>
+    <script src="assets/scripts/returns.js"></script>
+</body>
+</html>

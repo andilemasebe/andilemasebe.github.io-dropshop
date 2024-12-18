@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Returns Portal - DropShop</title>
+    <link rel="stylesheet" href="assets/styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="returns-portal">
+        <div class="portal-header">
+            <h1><i class="fas fa-box-open"></i> Returns Portal</h1>
+            <p>Easy returns within 30 days of purchase</p>
+        </div>
+
+        <div class="returns-container">
+            <div class="returns-steps">
+                <div class="step active">
+                    <span class="step-number">1</span>
+                    <p>Order Details</p>
+                </div>
+                <div class="step">
+                    <span class="step-number">2</span>
+                    <p>Return Reason</p>
+                </div>
+                <div class="step">
+                    <span class="step-number">3</span>
+                    <p>Shipping Label</p>
+                </div>
+            </div>
+
+            <form class="returns-form">
+                <div class="form-section" id="orderDetails">
+                    <h2>Order Information</h2>
+                    <div class="form-group">
+                        <label>Order Number</label>
+                        <input type="text" required placeholder="Enter your order number">
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" required placeholder="Enter your email">
+                    </div>
+                    <button type="button" class="next-step">Next <i class="fas fa-arrow-right"></i></button>
+                </div>
+
+                <div class="form-section hidden" id="returnReason">
+                    <h2>Select Items to Return</h2>
+                    <div class="return-items">
+                        <!-- Items will be dynamically loaded here -->
+                    </div>
+                    <div class="form-group">
+                        <label>Return Reason</label>
+                        <select required>
+                            <option value="">Select a reason</option>
+                            <option value="wrong-size">Wrong Size</option>
+                            <option value="defective">Defective Item</option>
+                            <option value="not-as-described">Not as Described</option>
+                            <option value="changed-mind">Changed Mind</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Additional Comments</label>
+                        <textarea placeholder="Tell us more about your return reason"></textarea>
+                    </div>
+                    <div class="button-group">
+                        <button type="button" class="prev-step"><i class="fas fa-arrow-left"></i> Previous</button>
+                        <button type="button" class="next-step">Next <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <div class="form-section hidden" id="shippingLabel">
+                    <h2>Generate Shipping Label</h2>
+                    <div class="shipping-info">
+                        <p><i class="fas fa-info-circle"></i> Your return shipping label will be emailed to you</p>
+                    </div>
+                    <div class="return-summary">
+                        <h3>Return Summary</h3>
+                        <!-- Summary will be dynamically populated -->
+                    </div>
+                    <button type="submit" class="submit-return">Complete Return</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="assets/scripts/script.js"></script>
+    <script src="assets/scripts/app.js"></script>
+    <script src="assets/scripts/returns.js"></script>
+</body>
+</html>

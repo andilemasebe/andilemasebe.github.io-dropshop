@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessories Collection - DropShop</title>
+    <link rel="stylesheet" href="assets/styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">DropShop</div>
+            <div class="top-nav">
+                <div class="search-bar">
+                    <input type="search" placeholder="Search products...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="user-account">
+                    <a href="#login"><i class="fas fa-user"></i> Login</a>
+                    <a href="#register">Register</a>
+                </div>
+                <div class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li class="dropdown">
+                    <a href="#products">Products <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-content">
+                        <li><a href="#new">New Arrivals</a></li>
+                        <li><a href="#bestsellers">Best Sellers</a></li>
+                        <li><a href="#trending">Trending</a></li>
+                        <li><a href="#deals">Special Deals</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#categories">Categories <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-content">
+                        <li><a href="#electronics">Electronics</a></li>
+                        <li><a href="#fashion">Fashion</a></li>
+                        <li><a href="#home-living">Home & Living</a></li>
+                        <li><a href="#accessories">Accessories</a></li>
+                    </ul>
+                </li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div id="shopping-cart" class="cart-sidebar">
+            <div class="cart-header">
+                <h3><i class="fas fa-shopping-cart"></i> Your Cart</h3>
+                <button class="close-cart"><i class="fas fa-times"></i></button>
+            </div>
+            
+            <div class="cart-items">
+                <!-- Cart items will be dynamically added here -->
+            </div>
+            
+            <div class="cart-summary">
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span class="subtotal">R0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Shipping</span>
+                    <span class="shipping">R0.00</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total</span>
+                    <span class="total-amount">R0.00</span>
+                </div>
+                <button class="checkout-btn">
+                    Proceed to Checkout <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="cart-overlay"></div>
+    </header>
+
+    <main class="accessories-page">
+        <div class="category-banner">
+            <h1>Accessories Collection</h1>
+            <p>Complete your look with our stunning accessories</p>
+            <div class="category-filters">
+                <select name="category">
+                    <option value="all">All Accessories</option>
+                    <option value="jewelry">Jewelry</option>
+                    <option value="watches">Watches</option>
+                    <option value="sunglasses">Sunglasses</option>
+                    <option value="bags">Bags & Wallets</option>
+                </select>
+                <select name="material">
+                    <option value="">Material</option>
+                    <option value="gold">Gold</option>
+                    <option value="silver">Silver</option>
+                    <option value="leather">Leather</option>
+                    <option value="steel">Stainless Steel</option>
+                </select>
+                <select name="price">
+                    <option value="">Price Range</option>
+                    <option value="0-500">R0 - R500</option>
+                    <option value="501-1000">R501 - R1000</option>
+                    <option value="1001+">R1001+</option>
+                </select>
+                <div class="view-toggle">
+                    <button class="grid-view active"><i class="fas fa-th"></i></button>
+                    <button class="list-view"><i class="fas fa-list"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-badge">New</div>
+                <img src="images/accessories/watch.jpg" alt="Luxury Watch">
+                <div class="product-details">
+                    <h3>Premium Watch</h3>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="price">R3,499</p>
+                    <p class="description">Elegant stainless steel chronograph watch</p>
+                    <div class="product-actions">
+                        <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                        <button class="quick-view"><i class="fas fa-eye"></i></button>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more accessory products here -->
+        </div>
+
+        <div class="pagination">
+            <button class="prev-page"><i class="fas fa-chevron-left"></i></button>
+            <div class="page-numbers">
+                <button class="active">1</button>
+                <button>2</button>
+                <button>3</button>
+                <button>4</button>
+            </div>
+            <button class="next-page"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Your trusted dropshipping partner for quality products.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#shipping">Shipping Info</a></li>
+                    <li><a href="#returns">Returns</a></li>
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                    <li><a href="#terms">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: support@dropshop.com</p>
+                <p>Phone: (555) 123-4567</p>
+            </div>
+            <div class="footer-section newsletter-section">
+                <h3>Newsletter</h3>
+                <p>Subscribe to get special offers and latest updates</p>
+                <form class="newsletter-form">
+                    <div class="newsletter-input-group">
+                        <input type="email" placeholder="Enter your email address">
+                        <button type="submit">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 DropShop. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/scripts/script.js"></script>
+    <script src="assets/scripts/app.js"></script>
+    <script src="assets/scripts/returns.js"></script>
+</body>
+</html>

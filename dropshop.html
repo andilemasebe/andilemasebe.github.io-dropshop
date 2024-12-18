@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vertoku - Chef Knives</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f8f8f8;
+    color: #000;
+}
+
+/* Top Banner */
+.top-banner {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 8px 0;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+nav .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+nav .nav-links {
+    list-style: none;
+    display: flex;
+}
+
+nav .nav-links li {
+    margin: 0 15px;
+}
+
+nav .nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav .nav-links a:hover {
+    color: #ff7f50;
+}
+
+nav .nav-right a {
+    text-decoration: none;
+    color: #333;
+    margin-left: 15px;
+    font-size: 14px;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 10%;
+    background-color: #fff;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.hero-text .shop-btn {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.hero-text .shop-btn:hover {
+    background-color: #ff7f50;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Bottom Decoration */
+.bottom-decor img {
+    width: 100px;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+nav .nav-links .dropdown {
+      position: relative;
+      display: inline-block;
+  }
+
+  .dropdown-content {
+      opacity: 0;
+      visibility: hidden;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #fff;
+      min-width: 220px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+      border-radius: 8px;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+      z-index: 100;
+  }
+
+  .dropdown:hover .dropdown-content {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+  }
+
+  .dropdown-content li {
+      margin: 0;
+      padding: 0;
+  }
+
+  .dropdown-content a {
+      color: #333;
+      padding: 14px 20px;
+      display: block;
+      font-size: 14px;
+      border-bottom: 1px solid #f5f5f5;
+      transition: all 0.2s ease;
+  }
+
+  .dropdown-content li:last-child a {
+      border-bottom: none;
+  }
+
+  .dropdown-content a:hover {
+      background-color: #f8f8f8;
+      color: #ff7f50;
+      padding-left: 25px;
+  }
+
+  .nav-links .dropdown > a:after {
+      content: '▾';
+      margin-left: 6px;
+      display: inline-block;
+      transition: transform 0.2s ease;
+  }
+
+  .nav-links .dropdown:hover > a:after {
+      transform: rotate(180deg);
+  }
+
+    </style>
+</head>
+<body>
+    <!-- Top Banner -->
+    <div class="top-banner">
+        <p>FREE USA SHIPPING. LIMITED STOCK REMAINING.</p>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">VERTOKU</div>
+        <ul class="nav-links">
+            <li><a href="#">HOME</a></li>
+            <li class="dropdown">
+                <a href="#">KNIVES <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-content">
+                    <li><a href="#">Chef Knives</a></li>
+                    <li><a href="#">Santoku Knives</a></li>
+                    <li><a href="#">Knife Sets</a></li>
+                    <li><a href="#">Utility Knives</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#">ACCESSORIES <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-content">
+                    <li><a href="#">Cutting Boards</a></li>
+                    <li><a href="#">Knife Blocks</a></li>
+                    <li><a href="#">Sharpening Tools</a></li>
+                    <li><a href="#">Kitchen Tools</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#">REVIEWS <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-content">
+                    <li><a href="#">Customer Reviews</a></li>
+                    <li><a href="#">Expert Reviews</a></li>
+                    <li><a href="#">Video Reviews</a></li>
+                    <li><a href="#">Testimonials</a></li>
+                </ul>
+            </li>
+            <li><a href="#">ABOUT US</a></li>
+            <li><a href="#">CONTACT US</a></li>
+        </ul>
+        <div class="nav-right">
+            <a href="#">ACCOUNT</a>
+            <a href="#">SEARCH</a>
+            <a href="#" class="cart">CART (0)</a>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1>High Performance Chef Knives</h1>
+            <p>Ultra sharp blades at unreal prices.</p>
+            <button class="shop-btn">Shop Now</button>
+        </div>
+        <div class="hero-image">
+            <img src="knife-set.png" alt="Chef Knife Set" />
+        </div>
+    </section>
+
+    <!-- Bottom Decoration -->
+    <div class="bottom-decor">
+        <img src="tomato.png" alt="Tomatoes" />
+    </div>
+
+    <script>
+        // JavaScript code for cart functionality
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+    </script>
+</body>
+</html>
+ 

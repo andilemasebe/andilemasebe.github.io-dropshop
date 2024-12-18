@@ -1,0 +1,1322 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DropShop - Your Premium Dropshipping Store</title>
+    <link rel="stylesheet" href="assets/styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        width: 100%;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background: #fff;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .nav-links.active {
+        display: block;
+    }
+
+    .nav-links li {
+        display: block;
+        margin: 0;
+    }
+
+    .nav-links li a {
+        display: block;
+        padding: 1rem;
+        border-bottom: 1px solid #eee;
+    }
+
+    .dropdown-content {
+        position: static;
+        box-shadow: none;
+        padding-left: 2rem;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">DropShop</div>
+            <button class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="top-nav">
+                <div class="search-bar">
+                    <input type="search" placeholder="Search products...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="user-account">
+                    <a href="#login"><i class="fas fa-user"></i> Login</a>
+                    <a href="#register">Register</a>
+                </div>
+                <div class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li class="dropdown">
+                    <a href="#products">Products <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-content">
+                        <li><a href="#new">New Arrivals</a></li>
+                        <li><a href="#bestsellers">Best Sellers</a></li>
+                        <li><a href="#trending">Trending</a></li>
+                        <li><a href="#deals">Special Deals</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#categories">Categories <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-content">
+                        <li><a href="#electronics">Electronics</a></li>
+                        <li><a href="#fashion">Fashion</a></li>
+                        <li><a href="#home-living">Home & Living</a></li>
+                        <li><a href="#accessories">Accessories</a></li>
+                    </ul>
+                </li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact-feature">Contact</a></li>
+            </ul>
+        </nav>
+        <!-- Add this after the nav section -->
+        <div id="shopping-cart" class="cart-sidebar">
+            <div class="cart-header">
+                <h3><i class="fas fa-shopping-cart"></i> Your Cart</h3>
+                <button class="close-cart"><i class="fas fa-times"></i></button>
+            </div>
+            
+            <div class="cart-items">
+                <!-- Cart items will be dynamically added here -->
+            </div>
+            
+            <div class="cart-summary">
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span class="subtotal">R0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Shipping</span>
+                    <span class="shipping">R0.00</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total</span>
+                    <span class="total-amount">R0.00</span>
+                </div>
+                <button class="checkout-btn">
+                    Proceed to Checkout <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+        <div class="cart-overlay"></div>
+    </header>
+
+    <!-- Add this before closing body tag -->
+    <div class="chatbot-container">
+        <div class="chat-header" id="chatHeader">
+            <h3><i class="fas fa-robot"></i> DropShop Assistant</h3>
+            <div class="chat-controls">
+                <button class="minimize-chat"><i class="fas fa-minus"></i></button>
+                <button class="close-chat"><i class="fas fa-times"></i></button>
+            </div>
+        </div>
+        
+        <div class="chat-messages">
+            <div class="message bot">
+                <i class="fas fa-robot"></i>
+                <div class="message-content">
+                    Hello! How can I help you today?
+                </div>
+            </div>
+        </div>
+        
+        <div class="quick-responses">
+            <button>Track Order</button>
+            <button>Shipping Info</button>
+            <button>Returns</button>
+            <button>Product Help</button>
+        </div>
+
+        <div class="chat-input">
+            <input type="text" placeholder="Type your message...">
+            <button class="send-message">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+    <button class="chat-toggle">
+        <i class="fas fa-comments"></i>
+    </button>
+
+    <main>
+        <!-- <section class="hero">
+            <h1>Discover Amazing Products</h1>
+            <p>Shop the latest trends with worldwide shipping</p>
+            <button class="cta-button">Shop Now</button>
+        </section> -->
+        <section class="hero" style="background-image: url('images/display-window.webp');">
+            <h1>Discover Amazing Products</h1>
+            <p>Shop the latest trends with worldwide shipping</p>
+            <button class="cta-button">Shop Now</button>
+        </section>
+        
+
+        <!-- Add to body -->
+        <div id="login-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <div class="modal-header">
+                    <h2>Welcome Back</h2>
+                    <p>Sign in to your account</p>
+                </div>
+                <form class="modal-form">
+                    <div class="form-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" required>
+                        <label>Email Address</label>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" required>
+                        <label>Password</label>
+                    </div>
+                    <div class="form-options">
+                        <label class="remember-me">
+                            <input type="checkbox">
+                            <span>Remember me</span>
+                        </label>
+                        <a href="#" class="forgot-password">Forgot Password?</a>
+                    </div>
+                    <button type="submit" class="submit-btn">Sign In</button>
+                    <div class="social-login">
+                        <p>Or continue with</p>
+                        <div class="social-buttons">
+                            <button type="button" class="google-btn"><i class="fab fa-google"></i></button>
+                            <button type="button" class="facebook-btn"><i class="fab fa-facebook-f"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="register-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <div class="modal-header">
+                    <h2>Create Account</h2>
+                    <p>Join our community today</p>
+                </div>
+                <form class="modal-form">
+                    <div class="form-group">
+                        <i class="fas fa-user"></i>
+                        <input type="text" required>
+                        <label>Full Name</label>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" required>
+                        <label>Email Address</label>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" required>
+                        <label>Password</label>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" required>
+                        <label>Confirm Password</label>
+                    </div>
+                    <div class="terms">
+                        <label>
+                            <input type="checkbox" required>
+                            <span>I agree to the Terms & Conditions</span>
+                        </label>
+                    </div>
+                    <button type="submit" class="submit-btn">Create Account</button>
+                </form>
+            </div>
+        </div>
+        <div id="forgot-password-modal" class="modal"></div>
+          <!-- <section id="featured-products">
+              <h2>Featured Products</h2>
+              <div class="swiper product-swiper">
+                  <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                          <div class="product-card">
+                              <div class="product-badge">New</div>
+                              <img src="images/online-shopping.webp" alt="Smart Watch">
+                              <div class="product-details">
+                                  <h3>Smart Watch Pro</h3>
+                                  <div class="rating">
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star-half-alt"></i>
+                                  </div>
+                                  <p class="price">R1,499</p>
+                                  <p class="description">Premium smartwatch with health tracking features</p>
+                                  <div class="product-actions">
+                                      <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                                      <button class="quick-view"><i class="fas fa-eye"></i></button>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                    
+                      <div class="swiper-slide">
+                          <div class="product-card">
+                              <div class="product-badge">Trending</div>
+                              <img src="images/posing-pictorial.jpeg" alt="Designer Bag">
+                              <div class="product-details">
+                                  <h3>Luxury Handbag</h3>
+                                  <div class="rating">
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                  </div>
+                                  <p class="price">R2,999</p>
+                                  <p class="description">Premium leather designer handbag</p>
+                                  <div class="product-actions">
+                                      <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                                      <button class="quick-view"><i class="fas fa-eye"></i></button>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                    
+                      <div class="swiper-slide">
+                          <div class="product-card">
+                              <div class="product-badge">Best Seller</div>
+                              <img src="images/pexels-photo-907664.webp" alt="Home Decor">
+                              <div class="product-details">
+                                  <h3>Modern Wall Art</h3>
+                                  <div class="rating">
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                      <i class="far fa-star"></i>
+                                  </div>
+                                  <p class="price">R899</p>
+                                  <p class="description">Contemporary abstract wall decoration</p>
+                                  <div class="product-actions">
+                                      <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                                      <button class="quick-view"><i class="fas fa-eye"></i></button>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="swiper-pagination"></div>
+                  <div class="swiper-button-next"></div>
+                  <div class="swiper-button-prev"></div>
+              </div>
+          </section> -->
+
+          <!-- New Arrivals Section -->
+          <section id="new-arrivals">
+            <div class="section-header">
+                <h2>New Arrivals</h2>
+                <p>Check out our latest products</p>
+            </div>
+            
+            <div class="products-grid">
+                <div class="product-card">
+                    <span class="badge">New</span>
+                    <img src="images/online-shopping.webp" alt="Wireless Earbuds">
+                    <div class="product-details">
+                        <h3>Premium Wireless Earbuds</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="price">R899</p>
+                        <p class="description">High-quality wireless earbuds with noise cancellation</p>
+                        <div class="product-actions">
+                            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                            <button class="quick-view"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="product-card">
+                    <span class="badge">New</span>
+                    <img src="images/posing-pictorial.jpeg" alt="Smart Watch">
+                    <div class="product-details">
+                        <h3>Fitness Smart Watch</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="price">R1,299</p>
+                        <p class="description">Advanced fitness tracking with heart rate monitor</p>
+                        <div class="product-actions">
+                            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                            <button class="quick-view"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="product-card">
+                    <span class="badge">New</span>
+                    <img src="images/pexels-photo-907664.webp" alt="Backpack">
+                    <div class="product-details">
+                        <h3>Travel Backpack Pro</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <p class="price">R799</p>
+                        <p class="description">Water-resistant backpack with laptop compartment</p>
+                        <div class="product-actions">
+                            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                            <button class="quick-view"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="best-sellers">
+            <div class="section-header">
+                <h2>Best Sellers</h2>
+                <p>Our most popular products loved by customers</p>
+            </div>
+            
+            <div class="products-grid">
+                <div class="product-card">
+                    <span class="badge bestseller">Best Seller</span>
+                    <img src="images/online-shopping.webp" alt="Smart Home Camera">
+                    <div class="product-details">
+                        <h3>Smart Security Camera</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span class="reviews">(2,145 reviews)</span>
+                        </div>
+                        <p class="price">R1,299</p>
+                        <p class="description">HD wireless security camera with night vision</p>
+                        <div class="product-actions">
+                            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                            <button class="quick-view"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="product-card">
+                    <span class="badge bestseller">Best Seller</span>
+                    <img src="images/posing-pictorial.jpeg" alt="Coffee Maker">
+                    <div class="product-details">
+                        <h3>Premium Coffee Maker</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span class="reviews">(1,879 reviews)</span>
+                        </div>
+                        <p class="price">R2,499</p>
+                        <p class="description">Programmable coffee maker with built-in grinder</p>
+                        <div class="product-actions">
+                            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                            <button class="quick-view"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="product-card">
+                    <span class="badge bestseller">Best Seller</span>
+                    <img src="images/pexels-photo-907664.webp" alt="Wireless Charger">
+                    <div class="product-details">
+                        <h3>Wireless Charging Pad</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span class="reviews">(1,567 reviews)</span>
+                        </div>
+                        <p class="price">R499</p>
+                        <p class="description">Fast wireless charging for all compatible devices</p>
+                        <div class="product-actions">
+                            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                            <button class="quick-view"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="trending">
+            <div class="section-header">
+                <h2>Trending Now</h2>
+                <p>Discover what's hot and in demand</p>
+            </div>
+            
+            <div class="products-grid">
+                <div class="product-card">
+                    <span class="badge trending">Trending</span>
+                    <div class="trend-rank">#1</div>
+                    <img src="images/online-shopping.webp" alt="Portable Speaker">
+                    <div class="product-details">
+                        <h3>Portable Bluetooth Speaker</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span class="trend-stats">+245% this week</span>
+                        </div>
+                        <p class="price">R899</p>
+                        <p class="description">Waterproof speaker with 20-hour battery life</p>
+                        <div class="product-actions">
+                            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                            <button class="quick-view"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="product-card">
+                    <span class="badge trending">Trending</span>
+                    <div class="trend-rank">#2</div>
+                    <img src="images/posing-pictorial.jpeg" alt="Smart Bulb">
+                    <div class="product-details">
+                        <h3>Smart LED Bulb Set</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span class="trend-stats">+180% this week</span>
+                        </div>
+                        <p class="price">R599</p>
+                        <p class="description">Voice-controlled multicolor LED bulbs</p>
+                        <div class="product-actions">
+                            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                            <button class="quick-view"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="product-card">
+                    <span class="badge trending">Trending</span>
+                    <div class="trend-rank">#3</div>
+                    <img src="images/pexels-photo-907664.webp" alt="Fitness Band">
+                    <div class="product-details">
+                        <h3>Smart Fitness Band</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span class="trend-stats">+156% this week</span>
+                        </div>
+                        <p class="price">R799</p>
+                        <p class="description">Advanced fitness tracking with heart rate monitor</p>
+                        <div class="product-actions">
+                            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                            <button class="quick-view"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>        
+        
+        <section id="special-deals">
+            <div class="section-header">
+                <h2>Special Deals</h2>
+                <p>Limited time offers you don't want to miss</p>
+            </div>
+            
+            <div class="products-grid">
+                <div class="product-card deal">
+                    <span class="badge deal">50% OFF</span>
+                    <div class="deal-timer">Ends in: 23:45:12</div>
+                    <img src="images/online-shopping.webp" alt="Wireless Headphones">
+                    <div class="product-details">
+                        <h3>Premium Headphones</h3>
+                        <div class="price-group">
+                            <p class="original-price">R1,999</p>
+                            <p class="deal-price">R999</p>
+                        </div>
+                        <div class="deal-progress">
+                            <div class="progress-bar" style="width: 75%"></div>
+                            <span class="stock-status">75% claimed</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                            <button class="quick-view"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="product-card deal">
+                    <span class="badge deal">40% OFF</span>
+                    <div class="deal-timer">Ends in: 11:32:45</div>
+                    <img src="images/posing-pictorial.jpeg" alt="Smart Watch">
+                    <div class="product-details">
+                        <h3>Smart Watch Pro</h3>
+                        <div class="price-group">
+                            <p class="original-price">R2,499</p>
+                            <p class="deal-price">R1,499</p>
+                        </div>
+                        <div class="deal-progress">
+                            <div class="progress-bar" style="width: 60%"></div>
+                            <span class="stock-status">60% claimed</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                            <button class="quick-view"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="product-card deal">
+                    <span class="badge deal">30% OFF</span>
+                    <div class="deal-timer">Ends in: 08:15:30</div>
+                    <img src="images/pexels-photo-907664.webp" alt="Bluetooth Speaker">
+                    <div class="product-details">
+                        <h3>Portable Speaker</h3>
+                        <div class="price-group">
+                            <p class="original-price">R1,299</p>
+                            <p class="deal-price">R899</p>
+                        </div>
+                        <div class="deal-progress">
+                            <div class="progress-bar" style="width: 45%"></div>
+                            <span class="stock-status">45% claimed</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                            <button class="quick-view"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="electronics">
+            <div class="section-header">
+                <h2>Electronics</h2>
+                <p>Discover cutting-edge technology and gadgets</p>
+            </div>
+            
+            <div class="products-grid">
+                <div class="product-card electronics">
+                    <span class="badge tech">Latest Tech</span>
+                    <div class="tech-specs">4K Ultra HD</div>
+                    <img src="images/online-shopping.webp" alt="Smart TV">
+                    <div class="product-details">
+                        <h3>55" Smart TV</h3>
+                        <div class="features">
+                            <span><i class="fas fa-wifi"></i> Smart Hub</span>
+                            <span><i class="fas fa-gamepad"></i> Gaming Mode</span>
+                            <span><i class="fas fa-volume-up"></i> Dolby Audio</span>
+                        </div>
+                        <p class="price">R8,999</p>
+                        <div class="product-actions">
+                            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                            <button class="quick-view"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="product-card electronics">
+                    <span class="badge tech">Best Value</span>
+                    <div class="tech-specs">256GB SSD</div>
+                    <img src="images/posing-pictorial.jpeg" alt="Laptop">
+                    <div class="product-details">
+                        <h3>Ultra Slim Laptop</h3>
+                        <div class="features">
+                            <span><i class="fas fa-microchip"></i> i7 Processor</span>
+                            <span><i class="fas fa-memory"></i> 16GB RAM</span>
+                            <span><i class="fas fa-battery-full"></i> 12hr Battery</span>
+                        </div>
+                        <p class="price">R12,999</p>
+                        <div class="product-actions">
+                            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                            <button class="quick-view"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="product-card electronics">
+                    <span class="badge tech">Premium</span>
+                    <div class="tech-specs">5G Ready</div>
+                    <img src="images/pexels-photo-907664.webp" alt="Smartphone">
+                    <div class="product-details">
+                        <h3>Pro Smartphone</h3>
+                        <div class="features">
+                            <span><i class="fas fa-camera"></i> 108MP Camera</span>
+                            <span><i class="fas fa-bolt"></i> Fast Charging</span>
+                            <span><i class="fas fa-mobile"></i> 6.7" Display</span>
+                        </div>
+                        <p class="price">R15,999</p>
+                        <div class="product-actions">
+                            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                            <button class="quick-view"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="fashion">
+            <div class="section-header">
+                <h2>Fashion Trends</h2>
+                <p>Elevate your style with our curated collection</p>
+            </div>
+            
+            <div class="products-grid">
+                <div class="product-card fashion">
+                    <span class="badge style">Designer Pick</span>
+                    <div class="size-info">XS - XXL</div>
+                    <img src="images/posing-pictorial.jpeg" alt="Designer Jacket">
+                    <div class="product-details">
+                        <h3>Premium Leather Jacket</h3>
+                        <div class="fashion-details">
+                            <span><i class="fas fa-tshirt"></i> Premium Leather</span>
+                            <span><i class="fas fa-palette"></i> Multiple Colors</span>
+                            <span><i class="fas fa-award"></i> Limited Edition</span>
+                        </div>
+                        <div class="color-options">
+                            <span class="color-dot black"></span>
+                            <span class="color-dot brown"></span>
+                            <span class="color-dot tan"></span>
+                        </div>
+                        <p class="price">R2,499</p>
+                        <div class="product-actions">
+                            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                            <button class="quick-view"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="product-card fashion">
+                    <span class="badge style">Trending</span>
+                    <div class="size-info">All Sizes</div>
+                    <img src="images/posing-pictorial.jpeg" alt="Designer Bag">
+                    <div class="product-details">
+                        <h3>Luxury Handbag</h3>
+                        <div class="fashion-details">
+                            <span><i class="fas fa-star"></i> Premium Quality</span>
+                            <span><i class="fas fa-shield-alt"></i> Authentic</span>
+                            <span><i class="fas fa-gem"></i> Exclusive</span>
+                        </div>
+                        <div class="color-options">
+                            <span class="color-dot beige"></span>
+                            <span class="color-dot navy"></span>
+                            <span class="color-dot red"></span>
+                        </div>
+                        <p class="price">R3,999</p>
+                        <div class="product-actions">
+                            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                            <button class="quick-view"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="product-card fashion">
+                    <span class="badge style">New Season</span>
+                    <div class="size-info">36-44</div>
+                    <img src="images/posing-pictorial.jpeg" alt="Designer Shoes">
+                    <div class="product-details">
+                        <h3>Designer Sneakers</h3>
+                        <div class="fashion-details">
+                            <span><i class="fas fa-check-circle"></i> Comfort Fit</span>
+                            <span><i class="fas fa-feather"></i> Lightweight</span>
+                            <span><i class="fas fa-bolt"></i> Sport Tech</span>
+                        </div>
+                        <div class="color-options">
+                            <span class="color-dot white"></span>
+                            <span class="color-dot grey"></span>
+                            <span class="color-dot blue"></span>
+                        </div>
+                        <p class="price">R1,899</p>
+                        <div class="product-actions">
+                            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                            <button class="quick-view"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="home-living">
+            <div class="section-header">
+                <h2>Home & Living</h2>
+                <p>Transform your space with elegant home essentials</p>
+            </div>
+            
+            <div class="products-grid">
+                <div class="product-card home">
+                    <span class="badge home">Luxury</span>
+                    <div class="material-info">100% Cotton</div>
+                    <img src="images/pexels-photo-907664.webp" alt="Bedding Set">
+                    <div class="product-details">
+                        <h3>Premium Bedding Set</h3>
+                        <div class="home-features">
+                            <span><i class="fas fa-bed"></i> Egyptian Cotton</span>
+                            <span><i class="fas fa-wind"></i> Breathable</span>
+                            <span><i class="fas fa-leaf"></i> Eco-Friendly</span>
+                        </div>
+                        <div class="variant-options">
+                            <span>King</span>
+                            <span>Queen</span>
+                            <span>Double</span>
+                        </div>
+                        <p class="price">R2,999</p>
+                        <div class="product-actions">
+                            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                            <button class="quick-view"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="product-card home">
+                    <span class="badge home">Artisan</span>
+                    <div class="material-info">Handcrafted</div>
+                    <img src="images/pexels-photo-907664.webp" alt="Table Lamp">
+                    <div class="product-details">
+                        <h3>Modern Table Lamp</h3>
+                        <div class="home-features">
+                            <span><i class="fas fa-lightbulb"></i> LED Compatible</span>
+                            <span><i class="fas fa-adjust"></i> Dimmable</span>
+                            <span><i class="fas fa-palette"></i> Designer Pick</span>
+                        </div>
+                        <div class="variant-options">
+                            <span>Gold</span>
+                            <span>Silver</span>
+                            <span>Bronze</span>
+                        </div>
+                        <p class="price">R1,499</p>
+                        <div class="product-actions">
+                            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                            <button class="quick-view"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="product-card home">
+                    <span class="badge home">Exclusive</span>
+                    <div class="material-info">Premium Quality</div>
+                    <img src="images/pexels-photo-907664.webp" alt="Area Rug">
+                    <div class="product-details">
+                        <h3>Luxury Area Rug</h3>
+                        <div class="home-features">
+                            <span><i class="fas fa-star"></i> Premium Wool</span>
+                            <span><i class="fas fa-broom"></i> Easy Clean</span>
+                            <span><i class="fas fa-shield-alt"></i> Stain Resistant</span>
+                        </div>
+                        <div class="variant-options">
+                            <span>Large</span>
+                            <span>Medium</span>
+                            <span>Small</span>
+                        </div>
+                        <p class="price">R3,499</p>
+                        <div class="product-actions">
+                            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                            <button class="quick-view"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="accessories">
+            <div class="section-header">
+                <h2>Luxury Accessories</h2>
+                <p>Complete your look with premium accessories</p>
+            </div>
+            
+            <div class="products-grid">
+                <div class="product-card accessory">
+                    <span class="badge luxury">Premium</span>
+                    <div class="material-tag">Genuine Leather</div>
+                    <img src="images/posing-pictorial.jpeg" alt="Leather Watch">
+                    <div class="product-details">
+                        <h3>Classic Leather Watch</h3>
+                        <div class="accessory-features">
+                            <span><i class="fas fa-watch"></i> Swiss Movement</span>
+                            <span><i class="fas fa-water"></i> Water Resistant</span>
+                            <span><i class="fas fa-certificate"></i> 2 Year Warranty</span>
+                        </div>
+                        <div class="style-variants">
+                            <div class="variant brown active"></div>
+                            <div class="variant black"></div>
+                            <div class="variant tan"></div>
+                        </div>
+                        <p class="price">R4,999</p>
+                        <div class="product-actions">
+                            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                            <button class="quick-view"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="product-card accessory">
+                    <span class="badge luxury">Exclusive</span>
+                    <div class="material-tag">Italian Design</div>
+                    <img src="images/posing-pictorial.jpeg" alt="Designer Sunglasses">
+                    <div class="product-details">
+                        <h3>Designer Sunglasses</h3>
+                        <div class="accessory-features">
+                            <span><i class="fas fa-sun"></i> UV Protection</span>
+                            <span><i class="fas fa-glasses"></i> Polarized</span>
+                            <span><i class="fas fa-shield-alt"></i> Scratch Resistant</span>
+                        </div>
+                        <div class="style-variants">
+                            <div class="variant gold active"></div>
+                            <div class="variant silver"></div>
+                            <div class="variant rose-gold"></div>
+                        </div>
+                        <p class="price">R2,999</p>
+                        <div class="product-actions">
+                            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                            <button class="quick-view"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="product-card accessory">
+                    <span class="badge luxury">Limited Edition</span>
+                    <div class="material-tag">Premium Crafted</div>
+                    <img src="images/posing-pictorial.jpeg" alt="Leather Wallet">
+                    <div class="product-details">
+                        <h3>Luxury Wallet</h3>
+                        <div class="accessory-features">
+                            <span><i class="fas fa-credit-card"></i> RFID Protected</span>
+                            <span><i class="fas fa-layer-group"></i> Multiple Slots</span>
+                            <span><i class="fas fa-box"></i> Gift Box</span>
+                        </div>
+                        <div class="style-variants">
+                            <div class="variant dark-brown active"></div>
+                            <div class="variant navy"></div>
+                            <div class="variant burgundy"></div>
+                        </div>
+                        <p class="price">R1,499</p>
+                        <div class="product-actions">
+                            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                            <button class="quick-view"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+        <section id="categories">
+            <div class="section-header">
+                <h2>Shop by Category</h2>
+                <p>Explore our wide range of categories</p>
+            </div>
+            <!-- <div class="category-grid">
+                <div class="category-card">
+                    <img src="images\online-shopping.webp" alt="Electronics">
+                    <h3>Electronics</h3>
+                </div>
+                <div class="category-card">
+                    <img src="images/posing-pictorial.jpeg" alt="Fashion">
+                    <h3>Fashion</h3>
+                </div>
+                <div class="category-card">
+                    <img src="images/pexels-photo-907664.webp" alt="Home & Living">
+                    <h3>Home & Living</h3>
+                </div>
+                <div class="category-grid">
+                    <div class="category-card">
+                        <img src="images\online-shopping.webp" alt="Electronics">
+                        <h3>Electronics</h3>
+                    </div>
+                    <div class="category-card">
+                        <img src="images/posing-pictorial.jpeg" alt="Fashion">
+                        <h3>Fashion</h3>
+                    </div>
+                    <div class="category-card">
+                        <img src="images/pexels-photo-907664.webp" alt="Home & Living">
+                        <h3>Home & Living</h3>
+                    </div>
+            </div> -->
+
+            <!-- Update the category cards to be clickable -->
+            <div class="category-grid">
+                <a href="electronics.html" class="category-card">
+                    <img src="images/online-shopping.webp" alt="Electronics">
+                    <h3>Electronics</h3>
+                    <span class="view-more">View All <i class="fas fa-arrow-right"></i></span>
+                </a>
+                
+                <a href="fashion.html" class="category-card">
+                    <img src="images/posing-pictorial.jpeg" alt="Fashion">
+                    <h3>Fashion</h3>
+                    <span class="view-more">View All <i class="fas fa-arrow-right"></i></span>
+                </a>
+                
+                <a href="home-living.html" class="category-card">
+                    <img src="images/pexels-photo-907664.webp" alt="Home & Living">
+                    <h3>Home & Living</h3>
+                    <span class="view-more">View All <i class="fas fa-arrow-right"></i></span>
+                </a>
+
+                <a href="accessories.html" class="category-card">
+                    <img src="images/pexels-photo-907664.webp" alt="Accessories">
+                    <h3>Accessories</h3>
+                    <span class="view-more">View All <i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+        </section>
+
+<div id="quick-view-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">×</span>
+        <div class="product-details">
+            <div class="product-image"></div>
+            <div class="product-info"></div>
+        </div>
+    </div>
+</div>
+  <div class="filter-section">
+      <div class="filter-group">
+          <select name="category">
+              <option value="">All Categories</option>
+              <option value="electronics">Electronics</option>
+              <option value="fashion">Fashion</option>
+              <option value="home">Home & Living</option>
+          </select>
+          <select name="price">
+              <option value="">Price Range</option>
+              <option value="0-50">R0 - R50</option>
+              <option value="51-100">R51 - R100</option>
+              <option value="101-200">R101 - R200</option>
+              <option value="201+">R201+</option>
+          </select>
+          <select name="sort">
+              <option value="">Sort By</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="newest">Newest First</option>
+          </select>
+      </div>
+  </div>
+
+  <section id="about-feature">
+    <div class="section-header">
+        <h2>About DropShop</h2>
+        <p>Your Premium Dropshipping Destination</p>
+    </div>
+    
+    <div class="about-container">
+        <div class="about-content">
+            <div class="about-grid">
+                <div class="about-card">
+                    <i class="fas fa-globe"></i>
+                    <h3>Global Reach</h3>
+                    <p>Connecting customers with premium products worldwide</p>
+                </div>
+                <div class="about-card">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Quality Assured</h3>
+                    <p>Every product carefully vetted for quality and authenticity</p>
+                </div>
+                <div class="about-card">
+                    <i class="fas fa-shipping-fast"></i>
+                    <h3>Fast Delivery</h3>
+                    <p>Swift and reliable shipping to your doorstep</p>
+                </div>
+            </div>
+            
+            <div class="about-description">
+                <p class="content-short">DropShop is your premier destination for curated premium products. We partner with top manufacturers worldwide to bring you the best in electronics, fashion, home goods, and accessories.</p>
+                <p class="content-full hidden">Our commitment to excellence drives us to carefully select each product, ensuring the highest quality standards. With DropShop, you get access to trending items, exclusive deals, and exceptional customer service. We believe in making premium shopping accessible to everyone, backed by our satisfaction guarantee and reliable worldwide shipping network.</p>
+                <button class="read-more-btn">Read More</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="testimonials">
+    <div class="section-header">
+        <h2>What Our Customers Say</h2>
+        <p>Real experiences from our valued customers</p>
+    </div>
+
+    <div class="testimonials-container">
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <div class="customer-profile">
+                    <img src="images/online-shopping.webp" alt="Customer">
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <blockquote>
+                    <i class="fas fa-quote-left"></i>
+                    <p>Outstanding quality and fast delivery. The customer service team went above and beyond!</p>
+                    <footer>
+                        <strong>Sarah Johnson</strong>
+                        <span>Verified Buyer</span>
+                    </footer>
+                </blockquote>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="customer-profile">
+                    <img src="images/posing-pictorial.jpeg" alt="Customer">
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+                <blockquote>
+                    <i class="fas fa-quote-left"></i>
+                    <p>Great selection of products at competitive prices. Will definitely shop here again!</p>
+                    <footer>
+                        <strong>Michael Chen</strong>
+                        <span>Verified Buyer</span>
+                    </footer>
+                </blockquote>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="customer-profile">
+                    <img src="images/pexels-photo-907664.webp" alt="Customer">
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <blockquote>
+                    <i class="fas fa-quote-left"></i>
+                    <p>The premium quality of every item exceeds expectations. Truly a luxury shopping experience!</p>
+                    <footer>
+                        <strong>Emma Davis</strong>
+                        <span>Verified Buyer</span>
+                    </footer>
+                </blockquote>
+                <!-- Update each testimonial card's blockquote section -->
+                <blockquote>
+                    <i class="fas fa-quote-left"></i>
+                    <p class="testimonial-text">
+                        <span class="short-text">Outstanding quality and fast delivery. The customer service team went above and beyond!</span>
+                        <span class="full-text hidden">Outstanding quality and fast delivery. The customer service team went above and beyond! I was particularly impressed with how they handled my special requests and the packaging was exceptional. Every product I've ordered has met or exceeded my expectations.</span>
+                    </p>
+                    <button class="read-more-btn">Read More</button>
+                    <footer>
+                        <strong>Sarah Johnson</strong>
+                        <span>Verified Buyer</span>
+                    </footer>
+                </blockquote>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact-feature">
+    <div class="section-header">
+        <h2>Get In Touch</h2>
+        <p>We're here to help and answer any questions</p>
+    </div>
+    
+    <div class="contact-container">
+        <div class="contact-grid">
+            <div class="contact-info">
+                <div class="info-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Visit Us</h3>
+                    <p>123 Shopping Avenue<br>Cape Town, South Africa</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-phone"></i>
+                    <h3>Call Us</h3>
+                    <p>+27 21 123 4567<br>Mon-Fri, 9am-6pm</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email Us</h3>
+                    <p>support@dropshop.com<br>sales@dropshop.com</p>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" required>
+                        <label for="name">Your Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" required>
+                        <label for="email">Your Email</label>
+                    </div>
+                    <div class="form-group">
+                        <select id="subject" required>
+                            <option value="">Select Subject</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="support">Product Support</option>
+                            <option value="shipping">Shipping Query</option>
+                            <option value="returns">Returns</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" required></textarea>
+                        <label for="message">Your Message</label>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+    </main>
+      <footer>
+          <div class="footer-content">
+              <div class="footer-section">
+                  <h3>About Us</h3>
+                  <p>Your trusted dropshipping partner for quality products.</p>
+              </div>
+              <div class="footer-section">
+                  <h3>Quick Links</h3>
+                  <ul>
+                      <li><a href="#shipping">Shipping Info</a></li>
+                      <li><a href="#returns">Returns</a></li>
+                      <li><a href="#privacy">Privacy Policy</a></li>
+                      <li><a href="#terms">Terms of Service</a></li>
+                  </ul>
+              </div>
+              <div class="footer-section">
+                  <h3>Contact Us</h3>
+                  <p>Email: support@dropshop.com</p>
+                  <p>Phone: (555) 123-4567</p>
+              </div>
+              <div class="footer-section newsletter-section">
+                  <h3>Newsletter</h3>
+                  <p>Subscribe to get special offers and latest updates</p>
+                  <form class="newsletter-form">
+                      <div class="newsletter-input-group">
+                          <input type="email" placeholder="Enter your email address">
+                          <button type="submit">
+                              <i class="fas fa-paper-plane"></i>
+                          </button>
+                      </div>
+                  </form>
+              </div>
+          </div>
+        <div class="footer-bottom">
+            <p>© 2024 DropShop. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/scripts/script.js"></script>
+    <script src="assets/scripts/app.js"></script>
+    <script src="assets/scripts/returns.js"></script>
+    <script>
+        // Mobile Menu Functionality
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+                navLinks.classList.remove('active');
+            }
+        });
+
+        // Mobile Menu Functionality
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        const dropdowns = document.querySelectorAll('.dropdown');
+        const body = document.body;
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            body.classList.toggle('menu-open');
+            
+            // Create/remove overlay
+            let overlay = document.querySelector('.overlay');
+            if (!overlay) {
+                overlay = document.createElement('div');
+                overlay.className = 'overlay';
+                document.body.appendChild(overlay);
+            }
+            overlay.classList.toggle('active');
+        });
+
+        // Handle dropdowns in mobile menu
+        dropdowns.forEach(dropdown => {
+            dropdown.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    dropdown.classList.toggle('active');
+                }
+            });
+        });
+
+        // Close menu when clicking overlay
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('overlay')) {
+                navLinks.classList.remove('active');
+                body.classList.remove('menu-open');
+                e.target.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
