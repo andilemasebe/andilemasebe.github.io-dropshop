@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Listing</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- <script src="assets/scripts/scripts.js"></script> -->
+    <script src="assets/scripts/shop-now.js"></script>
+    <link rel="stylesheet" href="assets/styles/shop.css">
+
+    <link rel="stylesheet" href="assets/styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="assets/scripts/scripts.js"></script>
+
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">DropShop</div>
+            <button class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="top-nav">
+                <!-- <div class="search-bar">
+                    <input type="search" placeholder="Search products...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </div> -->
+                <!-- Replace the existing search-bar div with this code -->
+                <div class="search-bar">
+                    <div class="search-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <input type="search" placeholder="Search products..." class="search-input collapsed">
+                </div>
+                <div class="user-account">
+                    <a href="#login"><i class="fas fa-user"></i> Login</a>
+                    <a href="#register">Register</a>
+                </div>
+                <div class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li class="dropdown">
+                    <a href="#products">Products <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-content">
+                        <li><a href="#new">New Arrivals</a></li>
+                        <li><a href="#bestsellers">Best Sellers</a></li>
+                        <li><a href="#trending">Trending</a></li>
+                        <li><a href="#deals">Special Deals</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#categories">Categories <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-content">
+                        <li><a href="#electronics">Electronics</a></li>
+                        <li><a href="#fashion">Fashion</a></li>
+                        <li><a href="#home-living">Home & Living</a></li>
+                        <li><a href="#accessories">Accessories</a></li>
+                    </ul>
+                </li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact-feature">Contact</a></li>
+            </ul>
+            <!-- Add this to the nav-links ul in the header -->
+            <!-- <li class="dropdown">
+                <a href="#partners">
+                    <i class="fas fa-handshake"></i> Partners <i class="fas fa-chevron-down"></i>
+                </a>
+                <ul class="dropdown-content">
+                    <li><a href="#samsung">Samsung</a></li>
+                    <li><a href="#nike">Nike</a></li>
+                    <li><a href="#lg">LG</a></li>
+                    <li><a href="#apple">Apple</a></li>
+                </ul>
+            </li> -->
+        </nav>
+        <!-- Add this after the nav section -->
+        <div id="shopping-cart" class="cart-sidebar">
+            <div class="cart-header">
+                <h3><i class="fas fa-shopping-cart"></i> Your Cart</h3>
+                <button class="close-cart"><i class="fas fa-times"></i></button>
+            </div>
+            
+            <div class="cart-items">
+                <!-- Cart items will be dynamically added here -->
+            </div>
+            
+            <div class="cart-summary">
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span class="subtotal">R0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Shipping</span>
+                    <span class="shipping">R0.00</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total</span>
+                    <span class="total-amount">R0.00</span>
+                </div>
+                <button class="checkout-btn">
+                    Proceed to Checkout <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+        <div class="cart-overlay"></div>
+    </header>
+
+    <div class="category-banner">
+        <h1>Electronics</h1>
+        <p>Discover the latest tech innovations</p>
+    </div>
+    <!-- Header Section -->
+    <!-- <header>
+        <div class="header-title">
+            <h1>Retro Running Looks (115)</h1>
+        </div>
+        <div class="header-actions">
+            <button class="filter-btn">Hide Filters</button>
+            <button class="sort-btn">Sort By ▼</button>
+        </div>
+    </header> -->
+
+    <!-- Main Content Section -->
+    <div class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <ul class="categories">
+                <li>Shoes</li>
+                <li>Tops & T-Shirts</li>
+                <li>Hoodies & Sweatshirts</li>
+                <li>Jackets</li>
+                <li>Trousers & Tights</li>
+                <li>Shorts</li>
+                <li>Sports Bras</li>
+                <li>Tracksuits</li>
+                <li>Skirts & Dresses</li>
+                <li>Socks</li>
+                <li>Accessories & Equipment</li>
+            </ul>
+            <div class="filters">
+                <h3>Gender</h3>
+                <p>▼</p>
+            </div>
+        </aside>
+
+        <!-- Product Listings -->
+        <section class="products">
+            <div class="product-card">
+                <img src="images/Beaded-Earrings.jpeg" alt="Nike V2K Run">
+                <h2>Nike V2K Run GORE-TEX</h2>
+                <p>Women's Waterproof Shoes</p>
+                <p>2 Colours</p>
+                <p class="price">R 2,799.95</p>
+            </div>
+
+            <div class="product-card">
+                <img src="images/christmas-decoration.jpeg" alt="Nike Shox TL">
+                <h2>Nike Shox TL</h2>
+                <p>Women's Shoes</p>
+                <p>6 Colours</p>
+                <p class="price">R 3,299.95</p>
+            </div>
+
+            <div class="product-card">
+                <img src="images/blue-earings.jpeg" alt="Nike Windrunner">
+                <h2>Sustainable Materials</h2>
+                <h3>Nike Windrunner</h3>
+                <p>Women's Loose UV Woven Full-Zip Jacket</p>
+                <p>2 Colours</p>
+                <p class="price">R 2,099.95</p>
+            </div>
+
+            <div class="product-card">
+                <img src="images/Beaded-Earrings.jpeg" alt="Nike V2K Run">
+                <h2>Nike V2K Run GORE-TEX</h2>
+                <p>Women's Waterproof Shoes</p>
+                <p>2 Colours</p>
+                <p class="price">R 2,799.95</p>
+            </div>
+
+            <div class="product-card">
+                <img src="images/christmas-decoration.jpeg" alt="Nike Shox TL">
+                <h2>Nike Shox TL</h2>
+                <p>Women's Shoes</p>
+                <p>6 Colours</p>
+                <p class="price">R 3,299.95</p>
+            </div>
+
+            <div class="product-card">
+                <img src="images/blue-earings.jpeg" alt="Nike Windrunner">
+                <h2>Sustainable Materials</h2>
+                <h3>Nike Windrunner</h3>
+                <p>Women's Loose UV Woven Full-Zip Jacket</p>
+                <p>2 Colours</p>
+                <p class="price">R 2,099.95</p>
+            </div>
+
+            <div class="product-card">
+                <img src="images/Beaded-Earrings.jpeg" alt="Nike V2K Run">
+                <h2>Nike V2K Run GORE-TEX</h2>
+                <p>Women's Waterproof Shoes</p>
+                <p>2 Colours</p>
+                <p class="price">R 2,799.95</p>
+            </div>
+
+            <div class="product-card">
+                <img src="images/christmas-decoration.jpeg" alt="Nike Shox TL">
+                <h2>Nike Shox TL</h2>
+                <p>Women's Shoes</p>
+                <p>6 Colours</p>
+                <p class="price">R 3,299.95</p>
+            </div>
+
+            <div class="product-card">
+                <img src="images/blue-earings.jpeg" alt="Nike Windrunner">
+                <h2>Sustainable Materials</h2>
+                <h3>Nike Windrunner</h3>
+                <p>Women's Loose UV Woven Full-Zip Jacket</p>
+                <p>2 Colours</p>
+                <p class="price">R 2,099.95</p>
+            </div>
+
+            <div class="product-card">
+                <img src="images/Beaded-Earrings.jpeg" alt="Nike V2K Run">
+                <h2>Nike V2K Run GORE-TEX</h2>
+                <p>Women's Waterproof Shoes</p>
+                <p>2 Colours</p>
+                <p class="price">R 2,799.95</p>
+            </div>
+
+            <div class="product-card">
+                <img src="images/christmas-decoration.jpeg" alt="Nike Shox TL">
+                <h2>Nike Shox TL</h2>
+                <p>Women's Shoes</p>
+                <p>6 Colours</p>
+                <p class="price">R 3,299.95</p>
+            </div>
+
+            <div class="product-card">
+                <img src="images/blue-earings.jpeg" alt="Nike Windrunner">
+                <h2>Sustainable Materials</h2>
+                <h3>Nike Windrunner</h3>
+                <p>Women's Loose UV Woven Full-Zip Jacket</p>
+                <p>2 Colours</p>
+                <p class="price">R 2,099.95</p>
+            </div>
+
+            <div class="product-card">
+                <img src="images/Beaded-Earrings.jpeg" alt="Nike V2K Run">
+                <h2>Nike V2K Run GORE-TEX</h2>
+                <p>Women's Waterproof Shoes</p>
+                <p>2 Colours</p>
+                <p class="price">R 2,799.95</p>
+            </div>
+
+            <div class="product-card">
+                <img src="images/christmas-decoration.jpeg" alt="Nike Shox TL">
+                <h2>Nike Shox TL</h2>
+                <p>Women's Shoes</p>
+                <p>6 Colours</p>
+                <p class="price">R 3,299.95</p>
+            </div>
+
+            <div class="product-card">
+                <img src="images/blue-earings.jpeg" alt="Nike Windrunner">
+                <h2>Sustainable Materials</h2>
+                <h3>Nike Windrunner</h3>
+                <p>Women's Loose UV Woven Full-Zip Jacket</p>
+                <p>2 Colours</p>
+                <p class="price">R 2,099.95</p>
+            </div>
+
+            <div class="product-card">
+                <img src="images/Beaded-Earrings.jpeg" alt="Nike V2K Run">
+                <h2>Nike V2K Run GORE-TEX</h2>
+                <p>Women's Waterproof Shoes</p>
+                <p>2 Colours</p>
+                <p class="price">R 2,799.95</p>
+            </div>
+
+            <div class="product-card">
+                <img src="images/christmas-decoration.jpeg" alt="Nike Shox TL">
+                <h2>Nike Shox TL</h2>
+                <p>Women's Shoes</p>
+                <p>6 Colours</p>
+                <p class="price">R 3,299.95</p>
+            </div>
+
+            <div class="product-card">
+                <img src="images/blue-earings.jpeg" alt="Nike Windrunner">
+                <h2>Sustainable Materials</h2>
+                <h3>Nike Windrunner</h3>
+                <p>Women's Loose UV Woven Full-Zip Jacket</p>
+                <p>2 Colours</p>
+                <p class="price">R 2,099.95</p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Your trusted dropshipping partner for quality products.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#shipping">Shipping Info</a></li>
+                    <li><a href="#returns">Returns</a></li>
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                    <li><a href="#terms">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                 <p>Email: support@dropshop.com</p> -
+                 <p>Email: andilemasebe@gmail.com</p>
+                <p>Phone: +2773 980-0705</p>
+            </div>
+            <div class="footer-section newsletter-section">
+                <h3>Newsletter</h3>
+                <p>Subscribe to get special offers and latest updates</p>
+                <form class="newsletter-form">
+                    <div class="newsletter-input-group">
+                        <input type="email" placeholder="Enter your email address">
+                        <button type="submit">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+      <div class="footer-bottom">
+          <p>© 2024 DropShop. All rights reserved.</p>
+      </div>
+  </footer>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="assets/scripts/shop.js"></script>
+</body>
+</html>

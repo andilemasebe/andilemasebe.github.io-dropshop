@@ -105,8 +105,8 @@ nav {
 }
 
 .cta-button {
-    background-color: var(--o-animation);
-    color: var(--text-color);
+    background-color: var(--secondary-color);
+    color: var(--light-gray);
     border: none;
     padding: 1rem 2rem;
     font-size: 1.1rem;
@@ -117,7 +117,7 @@ nav {
 }
 
 .cta-button:hover {
-    background-color: var(--text-color);
+    background-color: #2980b9;
     color: var(--Lavender);
 }
 
@@ -2675,3 +2675,94 @@ blockquote footer span {
     transform: scale(1.1);
     transition: all 0.3s ease;
 } */
+
+
+
+#explore-more {
+    padding: 4rem 0;
+    background: #f8f9fa;
+}
+
+.explore-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.explore-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.explore-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.explore-card i {
+    font-size: 2.5rem;
+    color: #007bff;
+    margin-bottom: 1rem;
+}
+
+.explore-card h3 {
+    margin: 1rem 0;
+    font-size: 1.5rem;
+}
+
+.explore-card p {
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.explore-link {
+    display: inline-block;
+    color: #007bff;
+    font-weight: 500;
+}
+
+.explore-link i {
+    font-size: 1rem;
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+}
+
+.explore-card:hover .explore-link i {
+    transform: translateX(5px);
+}
+
+@media (max-width: 768px) {
+    .explore-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+        padding: 1rem;
+    }
+}
+
+.cta-button {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    background: #007bff;
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    background: #0056b3;
+}
+
+
+
