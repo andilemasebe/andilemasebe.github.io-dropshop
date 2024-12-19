@@ -3,10 +3,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DropShop - Your Premium Dropshipping Store</title>
     <link rel="stylesheet" href="assets/styles/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="assets/scripts/scripts.js"></script>
     <style>
         .hamburger {
     display: none;
@@ -64,9 +67,16 @@
                 <i class="fas fa-bars"></i>
             </button>
             <div class="top-nav">
-                <div class="search-bar">
+                <!-- <div class="search-bar">
                     <input type="search" placeholder="Search products...">
                     <button type="submit"><i class="fas fa-search"></i></button>
+                </div> -->
+                <!-- Replace the existing search-bar div with this code -->
+                <div class="search-bar">
+                    <div class="search-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <input type="search" placeholder="Search products..." class="search-input collapsed">
                 </div>
                 <div class="user-account">
                     <a href="#login"><i class="fas fa-user"></i> Login</a>
@@ -100,6 +110,18 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact-feature">Contact</a></li>
             </ul>
+            <!-- Add this to the nav-links ul in the header -->
+            <!-- <li class="dropdown">
+                <a href="#partners">
+                    <i class="fas fa-handshake"></i> Partners <i class="fas fa-chevron-down"></i>
+                </a>
+                <ul class="dropdown-content">
+                    <li><a href="#samsung">Samsung</a></li>
+                    <li><a href="#nike">Nike</a></li>
+                    <li><a href="#lg">LG</a></li>
+                    <li><a href="#apple">Apple</a></li>
+                </ul>
+            </li> -->
         </nav>
         <!-- Add this after the nav section -->
         <div id="shopping-cart" class="cart-sidebar">
@@ -1225,6 +1247,107 @@
 </section>
 
     </main>
+    <!-- Add this section before the footer -->
+<section id="partners">
+    <div class="section-header">
+        <h2>Our Trusted Partners</h2>
+        <p>Working with leading brands to deliver excellence</p>
+    </div>
+
+    <div class="partners-container">
+        <div class="partners-grid">
+            <div class="partner-card">
+                <img src="images/partners/samsung.png" alt="Samsung">
+                <div class="partner-info">
+                    <h3>Samsung</h3>
+                    <span>Electronics Partner</span>
+                </div>
+            </div>
+
+            <div class="partner-card">
+                <img src="images/partners/nike.png" alt="Nike">
+                <div class="partner-info">
+                    <h3>Nike</h3>
+                    <span>Fashion Partner</span>
+                </div>
+            </div>
+
+            <div class="partner-card">
+                <img src="images/partners/lg.png" alt="LG">
+                <div class="partner-info">
+                    <h3>LG</h3>
+                    <span>Home Appliances Partner</span>
+                </div>
+            </div>
+
+            <div class="partner-card">
+                <img src="images/partners/apple.png" alt="Apple">
+                <div class="partner-info">
+                    <h3>Apple</h3>
+                    <span>Technology Partner</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Add this section before the footer -->
+    <!-- <section id="payment-methods">
+        <div class="section-header">
+            <h2>Secure Payment Methods</h2>
+            <p>Shop with confidence using our trusted payment options</p>
+        </div>
+        
+        <div class="payment-grid">
+            <div class="payment-card">
+                <i class="fab fa-cc-visa"></i>
+                <span>Visa</span>
+            </div>
+            <div class="payment-card">
+                <i class="fab fa-cc-mastercard"></i>
+                <span>Mastercard</span>
+            </div>
+            <div class="payment-card">
+                <i class="fab fa-paypal"></i>
+                <span>PayPal</span>
+            </div>
+            <div class="payment-card">
+                <i class="fab fa-apple-pay"></i>
+                <span>Apple Pay</span>
+            </div>
+            <div class="payment-card">
+                <i class="fab fa-google-pay"></i>
+                <span>Google Pay</span>
+            </div>
+        </div>
+    </section> -->
+    <div class="payment-grid">
+        <a href="https://visa.com" class="payment-card" target="_blank" rel="noopener">
+            <i class="fab fa-cc-visa"></i>
+            <span>Visa</span>
+        </a>
+        
+        <a href="https://mastercard.com" class="payment-card" target="_blank" rel="noopener">
+            <i class="fab fa-cc-mastercard"></i>
+            <span>Mastercard</span>
+        </a>
+        
+        <a href="https://paypal.com" class="payment-card" target="_blank" rel="noopener">
+            <i class="fab fa-paypal"></i>
+            <span>PayPal</span>
+        </a>
+        
+        <a href="https://apple.com/apple-pay" class="payment-card" target="_blank" rel="noopener">
+            <i class="fab fa-apple-pay"></i>
+            <span>Apple Pay</span>
+        </a>
+        
+        <a href="https://pay.google.com" class="payment-card" target="_blank" rel="noopener">
+            <i class="fab fa-google-pay"></i>
+            <span>Google Pay</span>
+        </a>
+    </div>    
+
       <footer>
           <div class="footer-content">
               <div class="footer-section">

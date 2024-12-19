@@ -585,3 +585,23 @@ document.addEventListener('click', (e) => {
     }
 });
 
+
+// Add this JavaScript to handle the search bar expansion
+document.querySelector('.search-icon').addEventListener('click', function() {
+    const searchInput = document.querySelector('.search-input');
+    searchInput.classList.toggle('expanded');
+    searchInput.classList.toggle('collapsed');
+    if (searchInput.classList.contains('expanded')) {
+        searchInput.focus();
+    }
+});
+
+// Close search on click outside
+document.addEventListener('click', function(e) {
+    const searchBar = document.querySelector('.search-bar');
+    const searchInput = document.querySelector('.search-input');
+    if (!searchBar.contains(e.target)) {
+        searchInput.classList.remove('expanded');
+        searchInput.classList.add('collapsed');
+    }
+});
